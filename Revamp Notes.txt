@@ -1,0 +1,23 @@
+Two types of SEO -> 
+1. On Page SEO (Blog websites)
+2. Off Page SEO (Social media apps)
+
+Bot checks the content of the web page from top to bottom using:
+1.Body - 40%
+2.Head - 60%
+
+Ranking :
+1.Basic ranking
+2.Keyword ranking
+
+Web Result Description: Only 250 words content can be used.
+
+Web Optimization Ranking: 
+
+Under Head Tag:
+<meta name="description" content="Best Food in Chennai"/> (Useful)
+<meta name="keywords" content="Top 10 Carnivals"/>
+<meta name="author" content="Karthikeyan"/>
+
+Under Body Tag:
+Semantic Elements : It interacts with content more effectively
