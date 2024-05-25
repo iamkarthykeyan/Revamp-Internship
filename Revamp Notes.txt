@@ -21,3 +21,6 @@ Under Head Tag:
 
 Under Body Tag:
 Semantic Elements : It interacts with content more effectively
+
+
+Icons - https://lucide.dev/icons/
