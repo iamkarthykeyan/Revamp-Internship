@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100 p-4">
+    <div class="text-center mb-6  mt-6">
+        <h2 class="text-2xl font-bold">MURUGAPPA AGENCY - TAX INVOICE</h2>
+        <p class="text-gray-700">
+            MURUGAPPA AGENCY 136A, ELANGO STREET, MURUGAPPA NAGAR, ERNAVOOR,CHENNAI: 60057.
+        </p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-lg mb-6 mt-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+            <div class="form-row-item">
+                <label for="invoice" class="block text-gray-700">Invoice no:</label>
+                <input type="text" id="invoice" placeholder="Enter invoice no" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div class="form-row-item">
+                <label for="date" class="block text-gray-700">Date:</label>
+                <input type="text" id="date" placeholder="Enter Date" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div class="form-row-item">
+                <label for="supplierName" class="block text-gray-700">Supplier Name:</label>
+                <input type="text" id="supplierName" placeholder="Enter supplier name" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div class="form-row-item">
+                <label for="description" class="block text-gray-700">Description:</label>
+                <input type="text" id="description" placeholder="Enter description" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div class="form-row-item">
+                <label for="address" class="block text-gray-700">Address Line 1:</label>
+                <input type="text" id="address" placeholder="Enter address line1" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div class="form-row-item">
+                <label for="address2" class="block text-gray-700">Address Line 2:</label>
+                <input type="text" id="address2" placeholder="Enter address line2" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div class="form-row-item">
+                <label for="pincode" class="block text-gray-700">Pincode:</label>
+                <input type="text" id="pincode" placeholder="Enter Pincode" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div class="form-row-item">
+                <label for="unit" class="block text-gray-700">Unit:</label>
+                <select class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" id="unit" name="dropdown">
+                    <option value="">-- Select an option --</option>
+                    <option value="Pkt">Pkt</option>
+                    <option value="Bundle">Bundle</option>
+                    <option value="Nos">Nos</option>
+                    <option value="KG">KG</option>
+                </select>
+            </div>
+
+            <div class="form-row-item">
+                <label for="gstNo" class="block text-gray-700">GST No:</label>
+                <input type="text" id="gstNo" placeholder="Enter GST No" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div class="form-row-item">
+                <label for="qty" class="block text-gray-700">Qty:</label>
+                <input type="number" id="qty" placeholder="Enter quantity" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div class="form-row-item">
+                <label for="rate" class="block text-gray-700">Rate:</label>
+                <input type="number" id="rate" placeholder="Enter rate" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div class="form-row-item">
+                <label for="cgst" class="block text-gray-700">CGST %:</label>
+                <input type="number" id="cgst" placeholder="Enter CGST" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div class="form-row-item">
+                <label for="sgst" class="block text-gray-700">SGST %:</label>
+                <input type="number" id="sgst" placeholder="Enter SGST" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div class="form-row-item hidden">
+                <label for="grandTotal" class="block text-gray-700">Grand Total:</label>
+                <input type="number" id="grandTotal" placeholder="Enter grand total" readonly class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+            </div>
+        </div>
+    </div>
+
+    <div class="flex justify-center gap-4 mb-6 mt-10">
+        <button onclick="addRow()" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Add Data</button>
+        <button onclick="generateExcel()" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Download Excel</button>
+        <button onclick="generatePDF()" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Download PDF</button>
+    </div>
+
+    <h2 class="text-2xl font-semibold text-center mt-16 mb-8">Invoice Data Table</h2>
+    <div class="overflow-x-auto">
+        <table id="dataTable" class="min-w-full bg-white border border-gray-300 rounded-lg shadow-lg">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="py-2 px-3 border border-gray-300">S.no</th>
+                    <th class="py-2 px-3 border border-gray-300">Invoice no</th>
+                    <th class="py-2 px-3 border border-gray-300">Date</th>
+                    <th class="py-2 px-3 border border-gray-300">Description</th>
+                    <th class="py-2 px-3 border border-gray-300">Unit</th>
+                    <th class="py-2 px-3 border border-gray-300">Qty</th>
+                    <th class="py-2 px-3 border border-gray-300">Rate</th>
+                    <th class="py-2 px-3 border border-gray-300">Amount</th>
+                    <th class="py-2 px-3 border border-gray-300">CGST Amount</th>
+                    <th class="py-2 px-3 border border-gray-300">SGST Amount</th>
+                    <th class="py-2 px-3 border border-gray-300">Grand Total</th>
+                    <th class="py-2 px-3 border border-gray-300">Supplier Name</th>
+                    <th class="py-2 px-3 border border-gray-300">Address line1</th>
+                    <th class="py-2 px-3 border border-gray-300">Address line2</th>
+                    <th class="py-2 px-3 border border-gray-300">Pincode</th>
+                    <th class="py-2 px-3 border border-gray-300">GST No</th>
+                    <th class="py-2 px-3 border border-gray-300">CGST %</th>
+                    <th class="py-2 px-3 border border-gray-300">SGST %</th>
+                    <th class="py-2 px-3 border border-gray-300">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+    
+
+    <div class="flex justify-center items-center mt-10 gap-2">
+        <label for="allTotalAmount" class="text-lg font-medium">Overall Grand Total:</label>
+        <input type="text" id="allTotalAmount" readonly class="w-24 p-2 border rounded focus:ring-2 focus:ring-blue-500" />
+    </div>
+
+    <script src="main.js"></script>
+    <!-- Include the XLSX library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</body>
+
+</html>

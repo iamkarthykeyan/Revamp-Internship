@@ -1,0 +1,41 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            width: 90%;
+            text-align: center;
+            margin: 0 auto;
+            border-collapse: collapse;
+            margin-top: -1px;
+            color: black;
+        }
+
+        .data{
+            padding: 5px;
+            text-align: center;
+            color: black;
+            border: 1px solid black;
+        }
+
+        .data1 {
+            text-align: left;
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            font-weight:600;
+            color: white;
+        }
+        .empty {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
