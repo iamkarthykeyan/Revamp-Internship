@@ -1,0 +1,58 @@
+
+ HTML
+
+1. What is HTML?
+   - HTML (HyperText Markup Language) is the standard markup language used to create and design web pages.
+
+2. Why HTML is used?
+   - HTML is used to structure content on the web, defining the elements and layout of a webpage.
+
+3. What is Emmet & List 5 Emmet?
+   - Emmet is a plugin for text editors that allows for quick HTML and CSS coding using abbreviations. Examples:
+     - `html:5` (Creates HTML5 boilerplate)
+     - `ul>li*5` (Creates an unordered list with 5 list items)
+
+4. Shortcut to create Emmet Boilerplate of HTML?
+   - `html:5` in an HTML file creates a basic HTML5 structure.
+
+5. What structure of HTML?
+   - HTML follows a hierarchical structure with nested elements organized into a tree-like format.
+
+6. What is the `<head>` tag?
+   - The `<head>` tag contains meta-information about the HTML document, such as title, character set, CSS links, etc.
+
+7. What is `<body>` tag?
+   - The `<body>` tag contains the main content of the HTML document that is displayed in the browser.
+
+8. Important 3 elements or tags?
+   - Examples include `<div>` (division of content), `<p>` (paragraph), `<a>` (anchor/link).
+
+9. What is different between elements & tags in HTML?
+   - Elements are the building blocks of HTML (like `<div>`, `<p>`, etc.), while tags are the syntax used to define these elements (`<div>`, `</div>`).
+
+ CSS
+
+1. What is CSS?
+   - CSS (Cascading Style Sheets) is a language used for describing the presentation of a document written in HTML or XML.
+
+2. Why is CSS?
+   - CSS is used to style and layout web pages, providing visual control over fonts, colors, layouts, etc.
+
+3. How to connect HTML & CSS, Tell the Emmet Shortcut?
+   - To link CSS to HTML: `link:css`. This creates a `<link>` tag to connect an external CSS file.
+
+4. How to get font, color, image, CDN?
+   - Fonts, colors, images, and CDNs (Content Delivery Networks) can be linked or imported into HTML/CSS files using appropriate tags (`<link>`, `<style>`, `<img>`, `<script>`).
+
+5. Basic CSS family: Text Family, Color & Background Family, Box Model?
+   - Text Family (font properties), Color & Background Family (color and background properties), Box Model (padding, border, margin).
+
+6. When to use background image vs `<img>` tag?
+   - Use `<img>` tag for content images (like photos), and CSS `background-image` property for decorative or background images.
+
+7. What is layout & Explain about flexbox properties?
+   - Layout refers to how elements are arranged on a webpage. Flexbox is a CSS layout model that makes it easier to design flexible and responsive layouts using properties like `display: flex`, `flex-direction`, `justify-content`, etc.
+
+8. What is Tailwind CSS & why is it used?
+   - Tailwind CSS is a utility-first CSS framework that provides low-level utility classes to build custom designs quickly without writing custom CSS. It's used for rapid prototyping and maintaining consistency in styles across projects.
+
